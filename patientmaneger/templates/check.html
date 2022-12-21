@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>check patient data</title>
+    <style>
+        
+        .box1{
+            border: 1px solid black;
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            height: 200px;
+            padding: 50px;
+            height: fit-content;
+        }
+        h1{
+            text-align: center;
+            color: rgb(43, 53, 29);
+            text-shadow: 2px 4px 8px grey;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        input{
+            width: 90%;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 6px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            
+        }
+        input:hover{
+            box-shadow: 4px 8px 16px grey;
+        }
+        label{
+           margin: 20px;
+           padding: 20px;
+           font-weight: bold;
+           font-size: 24px;
+           margin-left: -160px;
+
+        }
+        #check{
+            padding: 6px;
+        }
+       p{
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+       }
+       a{
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 6px;
+        margin: 5px;
+       }
+       
+    </style>
+</head>
+<body>
+    <h1>Check Patient Data</h1>
+    
+
+   <div class="box1">
+    <form action="" method="post">
+    {% csrf_token %}
+
+    <label for="UniqueId">Enter UniqueId</label><br>
+    <input type="text" name="UniqueId" placeholder="Enter UniqueId" required minlength="4"><br>
+    <input type="submit" value="check" id="check" name="check">
+    <a href="/patientmaneger/">Home</a> <a href="/patientmaneger/register/">Register</a>
+
+    </form>
+    <div id="data" >
+
+    <h3>{{ error }}</h3>
+
+    <p>Name : {{ patientdata.firstname }} {{ patientdata.lastname }}</p>
+    <p>Username : {{ patientdata.username }}</p>
+    <p>UniqueId : {{patientdata.UniqueId}}</p>
+    <p>Date of Birth : {{ patientdata.dob }}</p>
+    <p>Email id : {{ patientdata.email }}</p>
+    </div>
+        
+   </div>
+</body>
+</html>

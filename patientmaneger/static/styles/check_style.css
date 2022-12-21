@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    text-align: center;
+    color: rgb(43, 53, 29);
+    text-shadow: 2px 4px 8px aqua;
+}
+
+.box1{
+    border: 1px solid black;
+}
+form{
+    margin-left: 400px;
+}

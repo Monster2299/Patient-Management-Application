@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Register</title>
+
+<style>
+.box1{
+            border: 1px solid black;
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            height: fit-content;
+            padding: 40px;
+        }
+        h1{
+            text-align: center;
+            color: rgb(43, 53, 29);
+            text-shadow: 2px 4px 8px grey;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 30px;
+        }
+        input{
+            width: 90%;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 6px;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+        input:hover{
+            box-shadow: 2px 4px 8px grey;
+        }
+        label{
+            font-family: 'Courier New', Courier, monospace;
+           font-size: 22px;
+           margin-left:6px;
+           padding: 20px;
+           font-weight: bold;
+           margin-left: -120px;
+
+        }
+        #check{
+            padding: 6px;
+        }
+        #dob{
+            margin-left: -70px;
+        }
+        #username{
+            margin-left:-190px;
+        }
+        #pass{
+            margin-left:-200px;
+        }
+        a{
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 6px;
+        margin: 5px;
+       }
+
+
+
+</style>
+
+
+
+</head>
+<body>
+    <h1>Registration page</h1>
+  
+      <div class="box1">
+        <form action="" method="post">
+            {% csrf_token %}
+        <label for="UniqueId">Enter UniqueId</label><br>
+        <input type="text" name="UniqueId" placeholder="Enter UniqueId" required minlength="4"><br>
+
+        <label for="Username" id="username">Username</label><br>
+        <input type="text" name="username" placeholder="Enter Username" required minlength="4"><br>
+
+        <label for="firstname">Enter Firstname</label><br>
+        <input type="text" name="firstname" placeholder="Enter First Name" required minlength="2"><br>
+
+        <label for="lastname">Enter Last Name</label><br>
+        <input type="text" name="lastname" placeholder="Enter Last Name" required minlength="2"><br>
+
+        <label for="dob" id="dob">Enter Date of Birth</label><br>
+        <input type="date" name="dob" placeholder="Enter Date of Birth" required><br>
+
+        <label for="email">Enter Email Id</label><br>
+        <input type="email" name="email" placeholder="Enter Email Id" required><br>
+
+        <label for="password" id="pass" >Password</label><br>
+        <input type="password" name="password" placeholder="Enter Password" required  minlength="8"><br>
+
+        <p style="color: red;">{{ passwordEr }}</p>
+        <label for="retype">Retype Password</label><br>
+        <input type="password" name="retype" placeholder="Retype Password" required minlength="8"><br>
+        
+        
+
+    
+        <input type="submit" value="Register" id="check">
+        <a href="/patientmaneger/">Home</a> <a href="/patientmaneger/check/">Check</a>
+    
+        </form>
+    
+       </div>
+
+
+
+</body>
+</html>
